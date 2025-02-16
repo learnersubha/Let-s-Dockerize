@@ -1,0 +1,30 @@
+## The repository link where the code available
+   Link :- 
+
+## Docker File ##
+
+# Base image (OS)
+
+FROM openjdk:17-jdk-alpine
+
+# create work directory for application
+
+WORKDIR /app
+
+# Copy the code in your container from your host
+
+COPY src/Main.java /app/Main.java
+COPY quotes.txt /app/quotes.txt
+
+# Run the command to install libries or compile codes.
+
+RUN javac Main.java
+
+# Expose the port where the application will run
+
+EXPOSE 8000
+
+#Serve the application to keep it running
+
+CMD ["java","Main"]
+
