@@ -1,0 +1,31 @@
+## The repository link where code is available
+   Link :-  
+
+
+## Docker File ##
+
+## Base file (OS)
+
+FROM python:3.9-slim
+
+## Create a working directory
+
+WORKDIR /check
+
+## Copy the code 
+
+COPY . .
+
+## Run commands for install libries
+
+RUN pip install -r requirements.txt
+
+## Expose the port where the app running
+
+EXPOSE 80
+
+## Serve the app
+
+CMD ["python","run.py"]
+                                                                                                                                                                                       
+ 
