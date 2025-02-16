@@ -1,0 +1,29 @@
+## Repositery link where codes available.
+   Link :- 
+
+## DOCKER FILE ##
+
+# Base file (OS)
+
+FROM node:18
+
+# Create work directory
+
+WORKDIR /cp
+
+# copy code
+
+COPY . .
+
+# install libray 
+
+RUN npm install && npm run build
+
+# Expose port
+
+EXPOSE 3000
+
+# serve 
+
+CMD ["npm","run","dev"]
+                     
